@@ -47,6 +47,24 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Run with docker-compose
+
+```bash
+# Start server and mysql using docker-compose
+$ docker-compose up
+# Start nest server only
+$ docker-compose up backend
+```
+
+## Build docker image
+
+```bash
+# build nest project
+$ yarn build
+# build docker image
+$ docker build -t {{image-name}} .
+```
+
 ## Test
 
 ```bash
