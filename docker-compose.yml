@@ -1,0 +1,23 @@
+version: '3.7'
+
+services: 
+  backend:
+    image: node:10-alpine
+    volumes: 
+      - .:/server
+    command: sh -c 'cd /server && yarn && yarn start:dev'
+    ports: 
+      - 3000:3000
+  mysql:
+    image: mysql:5.7
+    ports: 
+      - 3306:3306
+    volumes: 
+      - mysql:/var/lib/mysql
+    environment: 
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+volumes: 
+  mysql:
